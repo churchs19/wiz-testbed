@@ -19,5 +19,7 @@ namespace WizTestbed.Model
 
         public IPAddress? HostIP { get; }
         public NetworkInterface? HostNIC { get; }
+
+        public byte[] MacAddress => HostNIC?.GetPhysicalAddress().GetAddressBytes() ?? new byte[0];
     }
 }
